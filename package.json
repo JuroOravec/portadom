@@ -1,6 +1,6 @@
 {
   "name": "portadom",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Single DOM manipulation interface across Browser API, JSDOM, Cheerio, Playwright",
   "author": "Juro Oravec <juraj.oravec.josefson@gmail.com>",
