@@ -42,11 +42,16 @@ const resB = await domP.text();
 - [every](PortadomArrayPromise.md#every)
 - [fill](PortadomArrayPromise.md#fill)
 - [filter](PortadomArrayPromise.md#filter)
+- [filterAsyncParallel](PortadomArrayPromise.md#filterasyncparallel)
+- [filterAsyncSerial](PortadomArrayPromise.md#filterasyncserial)
 - [find](PortadomArrayPromise.md#find)
+- [findAsyncSerial](PortadomArrayPromise.md#findasyncserial)
 - [findIndex](PortadomArrayPromise.md#findindex)
 - [flat](PortadomArrayPromise.md#flat)
 - [flatMap](PortadomArrayPromise.md#flatmap)
 - [forEach](PortadomArrayPromise.md#foreach)
+- [forEachAsyncParallel](PortadomArrayPromise.md#foreachasyncparallel)
+- [forEachAsyncSerial](PortadomArrayPromise.md#foreachasyncserial)
 - [includes](PortadomArrayPromise.md#includes)
 - [indexOf](PortadomArrayPromise.md#indexof)
 - [join](PortadomArrayPromise.md#join)
@@ -54,11 +59,11 @@ const resB = await domP.text();
 - [lastIndexOf](PortadomArrayPromise.md#lastindexof)
 - [length](PortadomArrayPromise.md#length)
 - [map](PortadomArrayPromise.md#map)
+- [mapAsyncParallel](PortadomArrayPromise.md#mapasyncparallel)
+- [mapAsyncSerial](PortadomArrayPromise.md#mapasyncserial)
 - [pop](PortadomArrayPromise.md#pop)
 - [promise](PortadomArrayPromise.md#promise)
 - [push](PortadomArrayPromise.md#push)
-- [reduce](PortadomArrayPromise.md#reduce)
-- [reduceRight](PortadomArrayPromise.md#reduceright)
 - [reverse](PortadomArrayPromise.md#reverse)
 - [shift](PortadomArrayPromise.md#shift)
 - [slice](PortadomArrayPromise.md#slice)
@@ -67,6 +72,11 @@ const resB = await domP.text();
 - [splice](PortadomArrayPromise.md#splice)
 - [unshift](PortadomArrayPromise.md#unshift)
 - [values](PortadomArrayPromise.md#values)
+
+### Methods
+
+- [reduce](PortadomArrayPromise.md#reduce)
+- [reduceRight](PortadomArrayPromise.md#reduceright)
 
 ## Properties
 
@@ -92,7 +102,7 @@ Wrapper for Array.at that returns the resulting item as [PortadomPromise](Portad
 
 #### Defined in
 
-[src/dom/types.ts:403](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L403)
+[src/dom/types.ts:417](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L417)
 
 ___
 
@@ -120,7 +130,7 @@ NOTE: The concat values are expected to be [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:409](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L409)
+[src/dom/types.ts:423](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L423)
 
 ___
 
@@ -148,7 +158,7 @@ NOTE: The concat values are expected to be [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:417](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L417)
+[src/dom/types.ts:431](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L431)
 
 ___
 
@@ -176,7 +186,7 @@ NOTE: Does NOT return an instance of [PortadomArrayPromise](PortadomArrayPromise
 
 #### Defined in
 
-[src/dom/types.ts:425](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L425)
+[src/dom/types.ts:439](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L439)
 
 ___
 
@@ -202,7 +212,7 @@ Wrapper for Array.every.
 
 #### Defined in
 
-[src/dom/types.ts:429](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L429)
+[src/dom/types.ts:443](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L443)
 
 ___
 
@@ -238,7 +248,7 @@ NOTE2: Unlike Array.fill, this option doesn't allow to specify `start` and `end`
 
 #### Defined in
 
-[src/dom/types.ts:437](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L437)
+[src/dom/types.ts:451](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L451)
 
 ___
 
@@ -264,7 +274,63 @@ Wrapper for Array.filter that returns the resulting array wrapped in [PortadomAr
 
 #### Defined in
 
-[src/dom/types.ts:441](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L441)
+[src/dom/types.ts:455](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L455)
+
+___
+
+### filterAsyncParallel
+
+• **filterAsyncParallel**: (...`args`: [callbackfn: Function]) => [`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+#### Type declaration
+
+▸ (`...args`): [`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+Similar to Array.filter, but awaits for Promises. Items are handled all in parallel.
+
+Returns the resulting array wrapped in [PortadomArrayPromise](PortadomArrayPromise.md).
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+[`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+#### Defined in
+
+[src/dom/types.ts:605](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L605)
+
+___
+
+### filterAsyncSerial
+
+• **filterAsyncSerial**: (...`args`: [predicate: Function]) => [`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+#### Type declaration
+
+▸ (`...args`): [`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+Similar to Array.filter, but awaits for Promises. Items are handled one-by-one.
+
+Returns the resulting array wrapped in [PortadomArrayPromise](PortadomArrayPromise.md).
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [predicate: Function] |
+
+##### Returns
+
+[`PortadomArrayPromise`](PortadomArrayPromise.md)<`El`, `BaseEl`\>
+
+#### Defined in
+
+[src/dom/types.ts:596](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L596)
 
 ___
 
@@ -290,7 +356,35 @@ Wrapper for Array.find that returns the resulting item as [PortadomPromise](Port
 
 #### Defined in
 
-[src/dom/types.ts:445](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L445)
+[src/dom/types.ts:459](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L459)
+
+___
+
+### findAsyncSerial
+
+• **findAsyncSerial**: (...`args`: [callbackfn: Function]) => [`PortadomPromise`](PortadomPromise.md)<`El`, `BaseEl`\>
+
+#### Type declaration
+
+▸ (`...args`): [`PortadomPromise`](PortadomPromise.md)<`El`, `BaseEl`\>
+
+Similar to Array.find, but awaits for Promises. Items are handled one-by-one.
+
+Returns the resulting item as [PortadomPromise](PortadomPromise.md).
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+[`PortadomPromise`](PortadomPromise.md)<`El`, `BaseEl`\>
+
+#### Defined in
+
+[src/dom/types.ts:614](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L614)
 
 ___
 
@@ -316,7 +410,7 @@ Wrapper for Array.findIndex.
 
 #### Defined in
 
-[src/dom/types.ts:447](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L447)
+[src/dom/types.ts:461](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L461)
 
 ___
 
@@ -342,7 +436,7 @@ Wrapper for Array.flat that returns the resulting array wrapped in [PortadomArra
 
 #### Defined in
 
-[src/dom/types.ts:449](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L449)
+[src/dom/types.ts:463](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L463)
 
 ___
 
@@ -377,7 +471,7 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:455](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L455)
+[src/dom/types.ts:469](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L469)
 
 ___
 
@@ -403,7 +497,59 @@ Wrapper for Array.forEach.
 
 #### Defined in
 
-[src/dom/types.ts:460](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L460)
+[src/dom/types.ts:474](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L474)
+
+___
+
+### forEachAsyncParallel
+
+• **forEachAsyncParallel**: (...`args`: [callbackfn: Function]) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`...args`): `Promise`<`void`\>
+
+Similar to Array.forEach, but awaits for Promises. Items are handled all in parallel.
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/dom/types.ts:569](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L569)
+
+___
+
+### forEachAsyncSerial
+
+• **forEachAsyncSerial**: (...`args`: [callbackfn: Function]) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`...args`): `Promise`<`void`\>
+
+Similar to Array.forEach, but awaits for Promises. Items are handled one-by-one.
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[src/dom/types.ts:562](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L562)
 
 ___
 
@@ -429,7 +575,7 @@ Wrapper for Array.includes.
 
 #### Defined in
 
-[src/dom/types.ts:462](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L462)
+[src/dom/types.ts:476](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L476)
 
 ___
 
@@ -455,7 +601,7 @@ Wrapper for Array.indexOf.
 
 #### Defined in
 
-[src/dom/types.ts:464](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L464)
+[src/dom/types.ts:478](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L478)
 
 ___
 
@@ -481,7 +627,7 @@ Wrapper for Array.join.
 
 #### Defined in
 
-[src/dom/types.ts:466](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L466)
+[src/dom/types.ts:480](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L480)
 
 ___
 
@@ -507,7 +653,7 @@ Wrapper for Array.keys.
 
 #### Defined in
 
-[src/dom/types.ts:468](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L468)
+[src/dom/types.ts:482](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L482)
 
 ___
 
@@ -533,7 +679,7 @@ Wrapper for Array.lastIndexOf.
 
 #### Defined in
 
-[src/dom/types.ts:470](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L470)
+[src/dom/types.ts:484](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L484)
 
 ___
 
@@ -545,7 +691,7 @@ Wrapper for Array.length.
 
 #### Defined in
 
-[src/dom/types.ts:472](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L472)
+[src/dom/types.ts:486](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L486)
 
 ___
 
@@ -579,7 +725,75 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:478](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L478)
+[src/dom/types.ts:492](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L492)
+
+___
+
+### mapAsyncParallel
+
+• **mapAsyncParallel**: <U\>(...`args`: [callbackfn: Function]) => `Promise`<`Awaited`<`U`\>[]\>
+
+#### Type declaration
+
+▸ <`U`\>(`...args`): `Promise`<`Awaited`<`U`\>[]\>
+
+Similar to Array.map, but awaits for Promises. Items are handled all in parallel.
+
+NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
+
+##### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+`Promise`<`Awaited`<`U`\>[]\>
+
+#### Defined in
+
+[src/dom/types.ts:587](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L587)
+
+___
+
+### mapAsyncSerial
+
+• **mapAsyncSerial**: <U\>(...`args`: [callbackfn: Function]) => `Promise`<`Awaited`<`U`\>[]\>
+
+#### Type declaration
+
+▸ <`U`\>(`...args`): `Promise`<`Awaited`<`U`\>[]\>
+
+Similar to Array.map, but awaits for Promises. Items are handled one-by-one.
+
+NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
+
+##### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `...args` | [callbackfn: Function] |
+
+##### Returns
+
+`Promise`<`Awaited`<`U`\>[]\>
+
+#### Defined in
+
+[src/dom/types.ts:578](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L578)
 
 ___
 
@@ -605,7 +819,7 @@ Wrapper for Array.pop that returns the resulting item as [PortadomPromise](Porta
 
 #### Defined in
 
-[src/dom/types.ts:483](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L483)
+[src/dom/types.ts:497](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L497)
 
 ___
 
@@ -617,7 +831,7 @@ Wrapped Promise of an array of [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:401](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L401)
+[src/dom/types.ts:410](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L410)
 
 ___
 
@@ -645,95 +859,7 @@ NOTE: The pushed values are expected to be [Portadom](Portadom.md) instances.
 
 #### Defined in
 
-[src/dom/types.ts:489](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L489)
-
-___
-
-### reduce
-
-• **reduce**: (`callbackfn`: (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\>) => `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>(`callbackfn`: (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `initialValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>) => `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\><U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => `U`, `initialValue`: `U`) => `Promise`<`U`\>
-
-#### Type declaration
-
-▸ (`callbackfn`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
-
-Wrapper for Array.reduce.
-
-NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
-
-##### Returns
-
-`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
-
-▸ (`callbackfn`, `initialValue`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
-
-Wrapper for Array.reduce.
-
-NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
-| `initialValue` | [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
-
-##### Returns
-
-`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
-
-▸ <`U`\>(`callbackfn`, `initialValue`): `Promise`<`U`\>
-
-Wrapper for Array.reduce.
-
-NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
-
-##### Type parameters
-
-| Name |
-| :------ |
-| `U` |
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `callbackfn` | (`previousValue`: `U`, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => `U` |
-| `initialValue` | `U` |
-
-##### Returns
-
-`Promise`<`U`\>
-
-#### Defined in
-
-[src/dom/types.ts:495](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L495)
-
-___
-
-### reduceRight
-
-• **reduceRight**: `Object`
-
-Wrapper for Array.reduceRight.
-
-NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
-
-#### Type declaration
-
-| Name | Type |
-| :------ | :------ |
-| `reduceRight` | (`callbackfn`: (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\>) => `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>(`callbackfn`: (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `initialValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>) => `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\><U\>(`callbackfn`: (`previousValue`: `U`, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => `U`, `initialValue`: `U`) => `Promise`<`U`\> |
-
-#### Defined in
-
-[src/dom/types.ts:505](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L505)
+[src/dom/types.ts:503](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L503)
 
 ___
 
@@ -759,7 +885,7 @@ Wrapper for Array.reverse that returns the resulting array wrapped in [PortadomA
 
 #### Defined in
 
-[src/dom/types.ts:513](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L513)
+[src/dom/types.ts:523](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L523)
 
 ___
 
@@ -785,7 +911,7 @@ Wrapper for Array.shift that returns the resulting item as [PortadomPromise](Por
 
 #### Defined in
 
-[src/dom/types.ts:517](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L517)
+[src/dom/types.ts:527](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L527)
 
 ___
 
@@ -811,7 +937,7 @@ Wrapper for Array.slice that returns the resulting array wrapped in [PortadomArr
 
 #### Defined in
 
-[src/dom/types.ts:521](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L521)
+[src/dom/types.ts:531](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L531)
 
 ___
 
@@ -837,7 +963,7 @@ Wrapper for Array.some.
 
 #### Defined in
 
-[src/dom/types.ts:523](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L523)
+[src/dom/types.ts:533](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L533)
 
 ___
 
@@ -863,7 +989,7 @@ Wrapper for Array.sort that returns the resulting array wrapped in [PortadomArra
 
 #### Defined in
 
-[src/dom/types.ts:527](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L527)
+[src/dom/types.ts:537](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L537)
 
 ___
 
@@ -889,7 +1015,7 @@ Wrapper for Array.splice that returns the resulting array wrapped in [PortadomAr
 
 #### Defined in
 
-[src/dom/types.ts:531](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L531)
+[src/dom/types.ts:541](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L541)
 
 ___
 
@@ -917,7 +1043,7 @@ NOTE: The added values are expected to be [Portadom](Portadom.md) instances.
 
 #### Defined in
 
-[src/dom/types.ts:539](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L539)
+[src/dom/types.ts:549](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L549)
 
 ___
 
@@ -943,4 +1069,132 @@ NOTE: Does NOT return an instance of PortadomArrayPromise
 
 #### Defined in
 
-[src/dom/types.ts:541](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L541)
+[src/dom/types.ts:551](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L551)
+
+## Methods
+
+### reduce
+
+▸ **reduce**(`callbackfn`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+Wrapper for Array.reduce.
+
+NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+
+#### Returns
+
+`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Defined in
+
+[src/dom/types.ts:509](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L509)
+
+▸ **reduce**(`callbackfn`, `initialValue`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+| `initialValue` | [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+
+#### Returns
+
+`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Defined in
+
+[src/dom/types.ts:510](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L510)
+
+▸ **reduce**<`U`\>(`callbackfn`, `initialValue`): `Promise`<`U`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: `U`, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => `U` |
+| `initialValue` | `U` |
+
+#### Returns
+
+`Promise`<`U`\>
+
+#### Defined in
+
+[src/dom/types.ts:511](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L511)
+
+___
+
+### reduceRight
+
+▸ **reduceRight**(`callbackfn`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+Wrapper for Array.reduceRight.
+
+NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of [PortadomArrayPromise](PortadomArrayPromise.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+
+#### Returns
+
+`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Defined in
+
+[src/dom/types.ts:517](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L517)
+
+▸ **reduceRight**(`callbackfn`, `initialValue`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+| `initialValue` | [`Portadom`](Portadom.md)<`El`, `BaseEl`\> |
+
+#### Returns
+
+`Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
+
+#### Defined in
+
+[src/dom/types.ts:518](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L518)
+
+▸ **reduceRight**<`U`\>(`callbackfn`, `initialValue`): `Promise`<`U`\>
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `U` |
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `callbackfn` | (`previousValue`: `U`, `currentValue`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>, `currentIndex`: `number`, `array`: [`Portadom`](Portadom.md)<`El`, `BaseEl`\>[]) => `U` |
+| `initialValue` | `U` |
+
+#### Returns
+
+`Promise`<`U`\>
+
+#### Defined in
+
+[src/dom/types.ts:519](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L519)

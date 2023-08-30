@@ -44,7 +44,7 @@ Override how container children are counted. Default uses `el.childElementCount`
 
 #### Defined in
 
-[src/page/types.ts:61](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L61)
+[src/page/types.ts:61](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/types.ts#L61)
 
 ___
 
@@ -71,7 +71,7 @@ Override how container children are extraced. Default uses `el.children`
 
 #### Defined in
 
-[src/page/types.ts:63](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L63)
+[src/page/types.ts:63](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/types.ts#L63)
 
 ___
 
@@ -83,7 +83,7 @@ How many times to retry the infinite scroll if new items aren't loading
 
 #### Defined in
 
-[src/page/types.ts:59](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L59)
+[src/page/types.ts:59](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/types.ts#L59)
 
 ___
 
@@ -110,7 +110,7 @@ Override how container children are scrolled into view. Default uses `el.scrollI
 
 #### Defined in
 
-[src/page/types.ts:65](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L65)
+[src/page/types.ts:65](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/types.ts#L65)
 
 ___
 
@@ -137,4 +137,4 @@ Override whether and how to wait after scrolling into view
 
 #### Defined in
 
-[src/page/types.ts:67](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L67)
+[src/page/types.ts:67](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/types.ts#L67)

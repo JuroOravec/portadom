@@ -53,7 +53,7 @@ Any instance that is a Playwright Handle.
 
 #### Defined in
 
-[src/dom/domUtils.ts:39](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L39)
+[src/dom/domUtils.ts:39](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L39)
 
 ___
 
@@ -71,7 +71,7 @@ Implementation of Portadom in browser (using Browser API)
 
 #### Defined in
 
-[src/dom/dom.ts:13](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L13)
+[src/dom/dom.ts:13](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L13)
 
 ___
 
@@ -89,7 +89,7 @@ Implementation of Portadom in Cheerio
 
 #### Defined in
 
-[src/dom/dom.ts:235](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L235)
+[src/dom/dom.ts:235](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L235)
 
 ___
 
@@ -107,7 +107,7 @@ Any instance that is a Playwright Handle, or can be converted to one.
 
 #### Defined in
 
-[src/dom/domUtils.ts:41](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L41)
+[src/dom/domUtils.ts:41](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L41)
 
 ___
 
@@ -125,7 +125,7 @@ Implementation of Portadom in Playwright using Handles
 
 #### Defined in
 
-[src/dom/dom.ts:459](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L459)
+[src/dom/dom.ts:459](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L459)
 
 ___
 
@@ -143,7 +143,7 @@ Implementation of Portadom in Playwright using Locators
 
 #### Defined in
 
-[src/dom/dom.ts:800](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L800)
+[src/dom/dom.ts:800](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L800)
 
 ___
 
@@ -161,7 +161,7 @@ Implementation of Portapage in Playwright
 
 #### Defined in
 
-[src/page/page.ts:23](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/page.ts#L23)
+[src/page/page.ts:23](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/page.ts#L23)
 
 ## Functions
 
@@ -189,7 +189,7 @@ Implementation of Portadom in browser (using Browser API)
 
 #### Defined in
 
-[src/dom/dom.ts:16](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L16)
+[src/dom/dom.ts:16](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L16)
 
 ___
 
@@ -218,7 +218,7 @@ Implementation of Portadom in Cheerio
 
 #### Defined in
 
-[src/dom/dom.ts:241](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L241)
+[src/dom/dom.ts:241](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L241)
 
 ___
 
@@ -253,7 +253,7 @@ cache the IDs outside of Playwright in Sets or Maps.
 
 #### Defined in
 
-[src/page/pageUtils.ts:20](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/pageUtils.ts#L20)
+[src/page/pageUtils.ts:20](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/pageUtils.ts#L20)
 
 ___
 
@@ -302,7 +302,7 @@ const resB = await domP.text();
 
 #### Defined in
 
-[src/dom/types.ts:569](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L569)
+[src/dom/types.ts:642](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L642)
 
 ___
 
@@ -351,7 +351,7 @@ const resB = await domP.text();
 
 #### Defined in
 
-[src/dom/types.ts:242](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L242)
+[src/dom/types.ts:251](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L251)
 
 ___
 
@@ -377,7 +377,7 @@ h is Locator
 
 #### Defined in
 
-[src/dom/domUtils.ts:43](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L43)
+[src/dom/domUtils.ts:43](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L43)
 
 ___
 
@@ -411,7 +411,7 @@ To override how Locators are resolved, supply own `locatorResolver` function.
 
 #### Defined in
 
-[src/dom/domUtils.ts:54](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L54)
+[src/dom/domUtils.ts:54](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L54)
 
 ___
 
@@ -440,7 +440,7 @@ Implementation of Portadom in Playwright using Handles
 
 #### Defined in
 
-[src/dom/dom.ts:470](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L470)
+[src/dom/dom.ts:470](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L470)
 
 ___
 
@@ -469,7 +469,7 @@ Implementation of Portadom in Playwright using Locators
 
 #### Defined in
 
-[src/dom/dom.ts:803](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L803)
+[src/dom/dom.ts:803](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/dom.ts#L803)
 
 ___
 
@@ -497,7 +497,7 @@ Implementation of Portapage in Playwright
 
 #### Defined in
 
-[src/page/page.ts:30](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/page.ts#L30)
+[src/page/page.ts:30](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/page/page.ts#L30)
 
 ___
 
@@ -524,7 +524,7 @@ To `[Cheerio[el], Cheerio[el], Cheerio[el], Cheerio[el]]`
 
 #### Defined in
 
-[src/dom/domUtils.ts:16](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L16)
+[src/dom/domUtils.ts:16](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L16)
 
 ___
 
@@ -557,4 +557,4 @@ To `ElHandle(el), ElHandle(el), ElHandle(el)`
 
 #### Defined in
 
-[src/dom/domUtils.ts:31](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L31)
+[src/dom/domUtils.ts:31](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/domUtils.ts#L31)
