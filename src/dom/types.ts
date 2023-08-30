@@ -1,6 +1,15 @@
 import type { StrAsNumOptions } from '../utils/format';
 import type { FormatUrlOptions } from '../utils/url';
 import type { MaybeArray, MaybePromise } from '../utils/types';
+import {
+  parallelAsyncFilter,
+  parallelAsyncForEach,
+  parallelAsyncMap,
+  serialAsyncFilter,
+  serialAsyncFind,
+  serialAsyncForEach,
+  serialAsyncMap,
+} from '../utils/async';
 
 /**
  * Common interface for working with DOM despite different environments.
@@ -399,6 +408,11 @@ export const createPortadomPromise = <El extends BaseEl, BaseEl>(
 export interface PortadomArrayPromise<El extends BaseEl, BaseEl> {
   /** Wrapped Promise of an array of {@link Portadom} instances */
   promise: Promise<Portadom<El, BaseEl>[]>;
+
+  ///////////////////
+  // ARRAY API
+  ///////////////////
+
   /** Wrapper for {@link Array.at} that returns the resulting item as {@link PortadomPromise}. */
   at: (...args: Parameters<Portadom<El, BaseEl>[]['at']>) => PortadomPromise<El, BaseEl>;
   /**
@@ -492,21 +506,17 @@ export interface PortadomArrayPromise<El extends BaseEl, BaseEl> {
    *
    * NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
    */
-  reduce: {
-    (callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
-    (callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
-    <U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>;
-  }; // prettier-ignore
+  reduce(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>; // prettier-ignore
+  reduce(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>; // prettier-ignore
+  reduce<U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>; // prettier-ignore
   /**
    * Wrapper for {@link Array.reduceRight}.
    *
    * NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
    */
-  reduceRight: {
-    reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
-    reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
-    reduceRight<U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>;
-  }; // prettier-ignore
+  reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>; // prettier-ignore
+  reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>; // prettier-ignore
+  reduceRight<U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>; // prettier-ignore
   /**
    * Wrapper for {@link Array.reverse} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
    */
@@ -541,6 +551,69 @@ export interface PortadomArrayPromise<El extends BaseEl, BaseEl> {
   values: (
     ...args: Parameters<Portadom<El, BaseEl>[]['values']>
   ) => Promise<IterableIterator<Portadom<El, BaseEl>>>;
+
+  ///////////////////////
+  // EXTENDED ARRAY API
+  ///////////////////////
+
+  /**
+   * Similar to {@link Array.forEach}, but awaits for Promises. Items are handled one-by-one.
+   */
+  forEachAsyncSerial: (...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<unknown>
+  ]) => Promise<void>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.forEach}, but awaits for Promises. Items are handled all in parallel.
+   */
+  forEachAsyncParallel: (...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<unknown>
+  ]) => Promise<void>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.map}, but awaits for Promises. Items are handled one-by-one.
+   *
+   * NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  mapAsyncSerial: <U>(...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<Awaited<U>>
+  ]) => Promise<Awaited<U>[]>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.map}, but awaits for Promises. Items are handled all in parallel.
+   *
+   * NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  mapAsyncParallel: <U>(...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<Awaited<U>>
+  ]) => Promise<Awaited<U>[]>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.filter}, but awaits for Promises. Items are handled one-by-one.
+   *
+   * Returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  filterAsyncSerial: (...args: [
+    predicate: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<unknown>
+  ]) => PortadomArrayPromise<El, BaseEl>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.filter}, but awaits for Promises. Items are handled all in parallel.
+   *
+   * Returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  filterAsyncParallel: (...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<unknown>
+  ]) => PortadomArrayPromise<El, BaseEl>; // prettier-ignore
+
+  /**
+   * Similar to {@link Array.find}, but awaits for Promises. Items are handled one-by-one.
+   *
+   * Returns the resulting item as {@link PortadomPromise}.
+   */
+  findAsyncSerial: (...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<unknown>
+  ]) => PortadomPromise<El, BaseEl>; // prettier-ignore
 }
 
 /**
@@ -574,6 +647,11 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
   const promise = Promise.resolve(promiseDom);
   return {
     promise,
+
+    ///////////////////
+    // ARRAY API
+    ///////////////////
+
     at: (...args: Parameters<T[]['at']>) => createPortadomPromise(
       promise.then((d) => d.at(...args) ?? null)
     ),
@@ -647,5 +725,44 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
     unshift: (...args: Parameters<T[]['unshift']>) => promise.then((d) => d.unshift(...args)),
     /** NOTE: Does NOT return an instance of PortadomArrayPromise */
     values: (...args: Parameters<T[]['values']>) => promise.then((d) => d.values(...args)),
+
+    ///////////////////////
+    // EXTENDED ARRAY API
+    ///////////////////////
+
+    forEachAsyncSerial: (...args: Parameters<PortadomArrayPromise<El, BaseEl>['forEachAsyncSerial']>) => {
+      return promise.then((d) => serialAsyncForEach(d, ...args));
+    }, // prettier-ignore
+    forEachAsyncParallel: (...args: Parameters<PortadomArrayPromise<El, BaseEl>['forEachAsyncParallel']>) => {
+      return promise.then((d) => parallelAsyncForEach(d, ...args));
+    }, // prettier-ignore
+    mapAsyncSerial: <U>(...args: [
+      callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<Awaited<U>>
+    ]) => {
+      return promise.then<Awaited<U>[]>((d) => serialAsyncMap<Portadom<El, BaseEl>, Awaited<U>>(d, ...args));
+    }, // prettier-ignore
+    mapAsyncParallel: <U>(...args: [
+      callbackfn: (value: Portadom<El, BaseEl>, index: number) => MaybePromise<Awaited<U>>
+    ]) => {
+      return promise.then<Awaited<U>[]>((d) => parallelAsyncMap<Portadom<El, BaseEl>, Awaited<U>>(d, ...args));
+    }, // prettier-ignore
+    filterAsyncSerial: (...args: Parameters<PortadomArrayPromise<El, BaseEl>['filterAsyncSerial']>) => {
+      return createPortadomArrayPromise(
+        promise.then((d) => serialAsyncFilter(d, ...args))
+      );
+    }, // prettier-ignore
+    filterAsyncParallel: (...args: Parameters<PortadomArrayPromise<El, BaseEl>['filterAsyncParallel']>) => {
+      return createPortadomArrayPromise(
+        promise.then((d) => parallelAsyncFilter(d, ...args))
+      );
+    }, // prettier-ignore
+    findAsyncSerial: (...args: Parameters<PortadomArrayPromise<El, BaseEl>['findAsyncSerial']>) => {
+      return createPortadomPromise(
+        promise.then(async (d) => {
+          const res = await serialAsyncFind(d, ...args) ?? null;
+          return res;
+        })
+      );
+    }, // prettier-ignore
   } satisfies PortadomArrayPromise<El, BaseEl>; // prettier-ignore
 };

@@ -14,6 +14,14 @@ export const serialAsyncMap = async <T, R>(
   return results;
 };
 
+export const parallelAsyncMap = async <T, R>(
+  inputArr: T[],
+  fn: (item: T, index: number) => MaybePromise<R>
+) => {
+  const results = await Promise.all(inputArr.map(fn));
+  return results;
+};
+
 export const serialAsyncFilter = async <T>(
   inputArr: T[],
   fn: (item: T, index: number) => MaybePromise<any>
@@ -28,6 +36,15 @@ export const serialAsyncFilter = async <T>(
   return results;
 };
 
+export const parallelAsyncFilter = async <T>(
+  inputArr: T[],
+  fn: (item: T, index: number) => MaybePromise<unknown>
+) => {
+  const filterResults = await Promise.all(inputArr.map(fn));
+  const finalArr = inputArr.filter((val, index) => filterResults[index]);
+  return finalArr;
+};
+
 export const serialAsyncFind = async <T>(
   inputArr: T[],
   fn: (item: T, index: number) => MaybePromise<any>
@@ -38,6 +55,26 @@ export const serialAsyncFind = async <T>(
     if (result) return input;
     index++;
   }
+};
+
+export const serialAsyncForEach = async <T>(
+  inputArr: T[],
+  fn: (item: T, index: number) => MaybePromise<any>
+) => {
+  let index = 0;
+  for (const input of inputArr) {
+    await fn(input, index);
+    index++;
+  }
+};
+
+export const parallelAsyncForEach = async <T>(
+  inputArr: T[],
+  fn: (item: T, index: number) => MaybePromise<unknown>
+) => {
+  const promises: Promise<any>[] = [];
+  inputArr.forEach((val, index) => promises.push(Promise.resolve(fn(val, index))));
+  await Promise.all(promises);
 };
 
 export interface RetryAsyncOptions {
