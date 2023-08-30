@@ -14,6 +14,8 @@ export type BrowserPortadom<T extends Element = Element> = Portadom<T, Element>;
 
 /** Implementation of Portadom in browser (using Browser API) */
 export const browserPortadom = <El extends Element>(node: El): BrowserPortadom<El> => {
+  const getDoc = () => node.ownerDocument;
+
   ///////////////////////
   // SCALAR OPERATIONS
   ///////////////////////
@@ -71,14 +73,14 @@ export const browserPortadom = <El extends Element>(node: El): BrowserPortadom<E
     return attrData;
   };
 
-  const href: BrowserPortadom<El>['href'] = ({ allowEmpty, allowRelative, baseUrl } = {}) => {
+  const href: BrowserPortadom<El>['href'] = async ({ allowEmpty, allowRelative, baseUrl } = {}) => {
     const val = prop('href', { allowEmpty }) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? (await url()) });
   };
 
-  const src: BrowserPortadom<El>['src'] = ({ allowEmpty, allowRelative, baseUrl } = {}) => {
+  const src: BrowserPortadom<El>['src'] = async ({ allowEmpty, allowRelative, baseUrl } = {}) => {
     const val = prop('src', { allowEmpty }) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? (await url()) });
   };
 
   const nodeName: BrowserPortadom<El>['nodeName'] = () => {
@@ -88,9 +90,8 @@ export const browserPortadom = <El extends Element>(node: El): BrowserPortadom<E
   };
 
   const url: BrowserPortadom<El>['url'] = () => {
-    const doc = node.ownerDocument;
     // See https://stackoverflow.com/a/16010322/9788634
-    const urlVal = doc.defaultView?.location?.href || null;
+    const urlVal = getDoc().defaultView?.location?.href || null;
     return urlVal;
   };
 
@@ -301,12 +302,12 @@ export const cheerioPortadom = <El extends Cheerio<AnyNode>>(
 
   const href: CheerioPortadom<El>['href'] = ({ allowEmpty, allowRelative, baseUrl } = {}) => {
     const val = prop('href', { allowEmpty }) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? srcUrl });
   };
 
   const src: CheerioPortadom<El>['src'] = ({ allowEmpty, allowRelative, baseUrl } = {}) => {
     const val = prop('src', { allowEmpty }) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? srcUrl });
   };
 
   const nodeName: CheerioPortadom<El>['nodeName'] = () => {
@@ -558,7 +559,7 @@ export const playwrightHandlePortadom = <El extends Locator | ElementHandle<Node
     baseUrl,
   } = {}) => {
     const val = (await prop('href', { allowEmpty })) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? (await url()) });
   };
 
   const src: PlaywrightHandlePortadom<El>['src'] = async ({
@@ -567,7 +568,7 @@ export const playwrightHandlePortadom = <El extends Locator | ElementHandle<Node
     baseUrl,
   } = {}) => {
     const val = (await prop('src', { allowEmpty })) as string | null;
-    return formatUrl(val, { allowRelative, baseUrl });
+    return formatUrl(val, { allowRelative, baseUrl: baseUrl ?? (await url()) });
   };
 
   const nodeName: PlaywrightHandlePortadom<El>['nodeName'] = async () => {
@@ -1005,3 +1006,5 @@ const _createCommonAncestorFromSelectorFn = <El>(input: {
 
   return getCommonAncestorFromSelector;
 };
+
+browserPortadom(document.body);
