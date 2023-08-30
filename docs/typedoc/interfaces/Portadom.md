@@ -71,7 +71,7 @@ Get element's attribute
 
 #### Defined in
 
-[src/dom/types.ts:31](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L31)
+[src/dom/types.ts:30](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L30)
 
 ___
 
@@ -105,17 +105,17 @@ Get element's attributes
 
 #### Defined in
 
-[src/dom/types.ts:33](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L33)
+[src/dom/types.ts:32](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L32)
 
 ___
 
 ### children
 
-• **children**: <TNewEl\>() => { `at`: (...`args`: [index: number]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `concat`: (...`args`: (`T` \| `ConcatArray`<`T`\>)[]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `copyWithin`: (...`args`: [target: number, start: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `entries`: (...`args`: []) => `Promise`<`IterableIterator`<[`number`, [`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>]\>\> ; `every`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> ; `fill`: (...`args`: [value: T, start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `filter`: (...`args`: [predicate: Function, thisArg?: any]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `find`: (...`args`: [predicate: Function, thisArg?: any]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `findIndex`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`number`\> ; `flat`: (...`args`: [depth?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `flatMap`: <U, This\>(...`args`: [callback: Function, thisArg?: This]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `forEach`: (...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`void`\> ; `includes`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`boolean`\> ; `indexOf`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> ; `join`: (...`args`: [separator?: string]) => `Promise`<`string`\> ; `keys`: (...`args`: []) => `Promise`<`IterableIterator`<`number`\>\> ; `lastIndexOf`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> ; `map`: <U\>(...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`U`[]\> ; `pop`: (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `promise`: `Promise`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>[]\> ; `push`: (...`args`: `T`[]) => `Promise`<`number`\> ; `reduce`: (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> ; `reduceRight`: (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> ; `reverse`: (...`args`: []) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `shift`: (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `slice`: (...`args`: [start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `some`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> ; `sort`: (...`args`: [compareFn?: Function]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `splice`: (...`args`: [start: number, deleteCount: number, ...items: T[]]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `unshift`: (...`args`: `T`[]) => `Promise`<`number`\> ; `values`: (...`args`: []) => `Promise`<`IterableIterator`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>\>\> ; `length`:   }
+• **children**: <TNewEl\>() => [`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 #### Type declaration
 
-▸ <`TNewEl`\>(): `Object`
+▸ <`TNewEl`\>(): [`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 Get element's children
 
@@ -127,46 +127,11 @@ Get element's children
 
 ##### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `at` | (...`args`: [index: number]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `concat` | (...`args`: (`T` \| `ConcatArray`<`T`\>)[]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `copyWithin` | (...`args`: [target: number, start: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `entries` | (...`args`: []) => `Promise`<`IterableIterator`<[`number`, [`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>]\>\> |
-| `every` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `fill` | (...`args`: [value: T, start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `filter` | (...`args`: [predicate: Function, thisArg?: any]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `find` | (...`args`: [predicate: Function, thisArg?: any]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `findIndex` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`number`\> |
-| `flat` | (...`args`: [depth?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `flatMap` | <U, This\>(...`args`: [callback: Function, thisArg?: This]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `forEach` | (...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`void`\> |
-| `includes` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`boolean`\> |
-| `indexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `join` | (...`args`: [separator?: string]) => `Promise`<`string`\> |
-| `keys` | (...`args`: []) => `Promise`<`IterableIterator`<`number`\>\> |
-| `lastIndexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `map` | <U\>(...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`U`[]\> |
-| `pop` | (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `promise` | `Promise`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>[]\> |
-| `push` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `reduce` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reduceRight` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reverse` | (...`args`: []) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `shift` | (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `slice` | (...`args`: [start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `some` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `sort` | (...`args`: [compareFn?: Function]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `splice` | (...`args`: [start: number, deleteCount: number, ...items: T[]]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `unshift` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `values` | (...`args`: []) => `Promise`<`IterableIterator`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>\>\> |
-| `get length()` | `Promise`<`number`\> |
+[`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 #### Defined in
 
-[src/dom/types.ts:73](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L73)
+[src/dom/types.ts:72](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L72)
 
 ___
 
@@ -198,17 +163,17 @@ Get a single ancestor (or itself) matching the selector
 
 #### Defined in
 
-[src/dom/types.ts:69](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L69)
+[src/dom/types.ts:68](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L68)
 
 ___
 
 ### findMany
 
-• **findMany**: <TNewEl\>(`selector`: `string`) => { `at`: (...`args`: [index: number]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `concat`: (...`args`: (`T` \| `ConcatArray`<`T`\>)[]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `copyWithin`: (...`args`: [target: number, start: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `entries`: (...`args`: []) => `Promise`<`IterableIterator`<[`number`, [`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>]\>\> ; `every`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> ; `fill`: (...`args`: [value: T, start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `filter`: (...`args`: [predicate: Function, thisArg?: any]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `find`: (...`args`: [predicate: Function, thisArg?: any]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `findIndex`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`number`\> ; `flat`: (...`args`: [depth?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `flatMap`: <U, This\>(...`args`: [callback: Function, thisArg?: This]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `forEach`: (...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`void`\> ; `includes`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`boolean`\> ; `indexOf`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> ; `join`: (...`args`: [separator?: string]) => `Promise`<`string`\> ; `keys`: (...`args`: []) => `Promise`<`IterableIterator`<`number`\>\> ; `lastIndexOf`: (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> ; `map`: <U\>(...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`U`[]\> ; `pop`: (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `promise`: `Promise`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>[]\> ; `push`: (...`args`: `T`[]) => `Promise`<`number`\> ; `reduce`: (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> ; `reduceRight`: (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> ; `reverse`: (...`args`: []) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `shift`: (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> ; `slice`: (...`args`: [start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `some`: (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> ; `sort`: (...`args`: [compareFn?: Function]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `splice`: (...`args`: [start: number, deleteCount: number, ...items: T[]]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } ; `unshift`: (...`args`: `T`[]) => `Promise`<`number`\> ; `values`: (...`args`: []) => `Promise`<`IterableIterator`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>\>\> ; `length`:   }
+• **findMany**: <TNewEl\>(`selector`: `string`) => [`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 #### Type declaration
 
-▸ <`TNewEl`\>(`selector`): `Object`
+▸ <`TNewEl`\>(`selector`): [`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 Get all descendants matching the selector
 
@@ -226,46 +191,11 @@ Get all descendants matching the selector
 
 ##### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `at` | (...`args`: [index: number]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `concat` | (...`args`: (`T` \| `ConcatArray`<`T`\>)[]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `copyWithin` | (...`args`: [target: number, start: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `entries` | (...`args`: []) => `Promise`<`IterableIterator`<[`number`, [`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>]\>\> |
-| `every` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `fill` | (...`args`: [value: T, start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `filter` | (...`args`: [predicate: Function, thisArg?: any]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `find` | (...`args`: [predicate: Function, thisArg?: any]) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `findIndex` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`number`\> |
-| `flat` | (...`args`: [depth?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `flatMap` | <U, This\>(...`args`: [callback: Function, thisArg?: This]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `forEach` | (...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`void`\> |
-| `includes` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`boolean`\> |
-| `indexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `join` | (...`args`: [separator?: string]) => `Promise`<`string`\> |
-| `keys` | (...`args`: []) => `Promise`<`IterableIterator`<`number`\>\> |
-| `lastIndexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `map` | <U\>(...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`U`[]\> |
-| `pop` | (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `promise` | `Promise`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>[]\> |
-| `push` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `reduce` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reduceRight` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reverse` | (...`args`: []) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `shift` | (...`args`: []) => [`PortadomPromise`](PortadomPromise.md)<`TNewEl`, `BaseEl`\> |
-| `slice` | (...`args`: [start?: number, end?: number]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `some` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `sort` | (...`args`: [compareFn?: Function]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `splice` | (...`args`: [start: number, deleteCount: number, ...items: T[]]) => { promise: Promise<Portadom<TNewEl, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<TNewEl, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `unshift` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `values` | (...`args`: []) => `Promise`<`IterableIterator`<[`Portadom`](Portadom.md)<`TNewEl`, `BaseEl`\>\>\> |
-| `get length()` | `Promise`<`number`\> |
+[`PortadomArrayPromise`](PortadomArrayPromise.md)<`TNewEl`, `BaseEl`\>
 
 #### Defined in
 
-[src/dom/types.ts:67](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L67)
+[src/dom/types.ts:66](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L66)
 
 ___
 
@@ -297,7 +227,7 @@ Get a single descendant matching the selector
 
 #### Defined in
 
-[src/dom/types.ts:65](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L65)
+[src/dom/types.ts:64](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L64)
 
 ___
 
@@ -330,7 +260,7 @@ or `null` if none such found.
 
 #### Defined in
 
-[src/dom/types.ts:83](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L83)
+[src/dom/types.ts:82](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L82)
 
 ___
 
@@ -364,7 +294,7 @@ or `null` if none such found.
 
 #### Defined in
 
-[src/dom/types.ts:89](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L89)
+[src/dom/types.ts:88](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L88)
 
 ___
 
@@ -390,7 +320,7 @@ Get element's href
 
 #### Defined in
 
-[src/dom/types.ts:50](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L50)
+[src/dom/types.ts:49](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L49)
 
 ___
 
@@ -422,7 +352,7 @@ Freely modify the underlying DOM node
 
 #### Defined in
 
-[src/dom/types.ts:58](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L58)
+[src/dom/types.ts:57](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L57)
 
 ___
 
@@ -432,7 +362,7 @@ ___
 
 #### Defined in
 
-[src/dom/types.ts:16](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L16)
+[src/dom/types.ts:15](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L15)
 
 ___
 
@@ -452,7 +382,7 @@ Get element's nodeName
 
 #### Defined in
 
-[src/dom/types.ts:54](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L54)
+[src/dom/types.ts:53](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L53)
 
 ___
 
@@ -478,7 +408,7 @@ Get element's parent
 
 #### Defined in
 
-[src/dom/types.ts:71](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L71)
+[src/dom/types.ts:70](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L70)
 
 ___
 
@@ -512,7 +442,7 @@ Get element's property
 
 #### Defined in
 
-[src/dom/types.ts:38](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L38)
+[src/dom/types.ts:37](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L37)
 
 ___
 
@@ -546,7 +476,7 @@ Get element's properties
 
 #### Defined in
 
-[src/dom/types.ts:44](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L44)
+[src/dom/types.ts:43](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L43)
 
 ___
 
@@ -566,7 +496,7 @@ Remove the element
 
 #### Defined in
 
-[src/dom/types.ts:75](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L75)
+[src/dom/types.ts:74](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L74)
 
 ___
 
@@ -592,7 +522,7 @@ Get root element
 
 #### Defined in
 
-[src/dom/types.ts:77](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L77)
+[src/dom/types.ts:76](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L76)
 
 ___
 
@@ -618,7 +548,7 @@ Get element's src
 
 #### Defined in
 
-[src/dom/types.ts:52](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L52)
+[src/dom/types.ts:51](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L51)
 
 ___
 
@@ -645,7 +575,7 @@ Get element's text (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:23](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L23)
+[src/dom/types.ts:22](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L22)
 
 ___
 
@@ -672,7 +602,7 @@ Get element's text as lowercase (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:27](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L27)
+[src/dom/types.ts:26](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L26)
 
 ___
 
@@ -698,7 +628,7 @@ Get element's text and convert it to number
 
 #### Defined in
 
-[src/dom/types.ts:29](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L29)
+[src/dom/types.ts:28](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L28)
 
 ___
 
@@ -725,7 +655,7 @@ Get element's text as uppercase (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:25](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L25)
+[src/dom/types.ts:24](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L24)
 
 ___
 
@@ -745,4 +675,4 @@ Get URL of website associated with the DOM
 
 #### Defined in
 
-[src/dom/types.ts:56](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L56)
+[src/dom/types.ts:55](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L55)

@@ -199,6 +199,6 @@ const attrs = await Promise.all(mapPromises);
 
 ## Reference
 
-[See the full documentation here](./docs/typedoc/README.md)
+See the [full documentation here](./docs/typedoc/modules.md).
 - [Portadom](./docs/typedoc/interfaces/Portadom.md)
 - [Portapage](./docs/typedoc/interfaces/Portapage.md)

@@ -1,5 +1,3 @@
-// NOTE: no-check might be required to silence errors from typedoc
-// // @ts-nocheck
 import type { StrAsNumOptions } from '../utils/format';
 import type { FormatUrlOptions } from '../utils/url';
 import type { MaybeArray, MaybePromise } from '../utils/types';
@@ -375,9 +373,175 @@ export const createPortadomPromise = <El extends BaseEl, BaseEl>(
   } satisfies PortadomPromise<El, BaseEl>; // prettier-ignore
 };
 
-export type PortadomArrayPromise<El extends BaseEl, BaseEl> = ReturnType<
-  typeof createPortadomArrayPromise<El, BaseEl>
->;
+/**
+ * Wrapper for a {@link Promise} that resolves to a n Array of {@link Portadom} instances. This allows us to chain
+ * Portadom methods before the Promise is resolved.
+ *
+ * Example:
+ *
+ * ```js
+ * const dom = Promise.resolve(browserPortadom({}));
+ * ```
+ *
+ * Instead of:
+ * ```js
+ * const resA = await (await dom).findOne('..');
+ * const resB = await (await dom).text();
+ * ```
+ *
+ * You can call:
+ * ```js
+ * const domP = createPortadomArrayPromise(dom);
+ * const resA = await domP.findOne('..');
+ * const resB = await domP.text();
+ * ```
+ */
+export interface PortadomArrayPromise<El extends BaseEl, BaseEl> {
+  /** Wrapped Promise of an array of {@link Portadom} instances */
+  promise: Promise<Portadom<El, BaseEl>[]>;
+  /** Wrapper for {@link Array.at} that returns the resulting item as {@link PortadomPromise}. */
+  at: (...args: Parameters<Portadom<El, BaseEl>[]['at']>) => PortadomPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.concat} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   *
+   * NOTE: The concat values are expected to be {@link Portadom} instances
+   */
+  concat: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['concat']>
+  ) => PortadomArrayPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.copyWithin} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   *
+   * NOTE: The concat values are expected to be {@link Portadom} instances
+   */
+  copyWithin: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['copyWithin']>
+  ) => PortadomArrayPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.entries}.
+   *
+   * NOTE: Does NOT return an instance of {@link PortadomArrayPromise}
+   */
+  entries: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['entries']>
+  ) => Promise<IterableIterator<[number, Portadom<El, BaseEl>]>>;
+  /** Wrapper for {@link Array.every}. */
+  every: (...args: Parameters<Portadom<El, BaseEl>[]['every']>) => Promise<boolean>;
+  /**
+   * Wrapper for {@link Array.fill}.
+   *
+   * NOTE: Fill values can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}.
+   *
+   * NOTE2: Unlike {@link Array.fill}, this option doesn't allow to specify `start` and `end`.
+   */
+  fill: <U>(...args: [value: U]) => Promise<U[]>;
+  /**
+   * Wrapper for {@link Array.filter} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  filter: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['filter']>
+  ) => PortadomArrayPromise<El, BaseEl>;
+  /** Wrapper for {@link Array.find} that returns the resulting item as {@link PortadomPromise}. */
+  find: (...args: Parameters<Portadom<El, BaseEl>[]['find']>) => PortadomPromise<El, BaseEl>;
+  /** Wrapper for {@link Array.findIndex}. */
+  findIndex: (...args: Parameters<Portadom<El, BaseEl>[]['findIndex']>) => Promise<number>;
+  /** Wrapper for {@link Array.flat} that returns the resulting array wrapped in {@link PortadomArrayPromise}. */
+  flat: (...args: Parameters<Portadom<El, BaseEl>[]['flat']>) => PortadomArrayPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.entries}.
+   *
+   * NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  flatMap: <U, This>(...args: [
+    callback: (this: This, value: Portadom<El, BaseEl>, index: number, array: Portadom<El, BaseEl>[]) => U | readonly U[],
+    thisArg?: This | undefined
+  ]) => Promise<U[]>; // prettier-ignore
+  /** Wrapper for {@link Array.forEach}. */
+  forEach: (...args: Parameters<Portadom<El, BaseEl>[]['forEach']>) => Promise<void>;
+  /** Wrapper for {@link Array.includes}. */
+  includes: (...args: Parameters<Portadom<El, BaseEl>[]['includes']>) => Promise<boolean>;
+  /** Wrapper for {@link Array.indexOf}. */
+  indexOf: (...args: Parameters<Portadom<El, BaseEl>[]['indexOf']>) => Promise<number>;
+  /** Wrapper for {@link Array.join}. */
+  join: (...args: Parameters<Portadom<El, BaseEl>[]['join']>) => Promise<string>;
+  /** Wrapper for {@link Array.keys}. */
+  keys: (...args: Parameters<Portadom<El, BaseEl>[]['keys']>) => Promise<IterableIterator<number>>;
+  /** Wrapper for {@link Array.lastIndexOf}. */
+  lastIndexOf: (...args: Parameters<Portadom<El, BaseEl>[]['lastIndexOf']>) => Promise<number>;
+  /** Wrapper for {@link Array.length}. */
+  length: Promise<number>;
+  /**
+   * Wrapper for {@link Array.map}.
+   *
+   * NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  map: <U>(...args: [
+    callbackfn: (value: Portadom<El, BaseEl>, index: number, array: Portadom<El, BaseEl>[]) => U,
+    thisArg?: any
+  ]) => Promise<U[]>; // prettier-ignore
+  /** Wrapper for {@link Array.pop} that returns the resulting item as {@link PortadomPromise}. */
+  pop: (...args: Parameters<Portadom<El, BaseEl>[]['pop']>) => PortadomPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.push}.
+   *
+   * NOTE: The pushed values are expected to be {@link Portadom} instances.
+   */
+  push: (...args: Parameters<Portadom<El, BaseEl>[]['push']>) => Promise<number>;
+  /**
+   * Wrapper for {@link Array.reduce}.
+   *
+   * NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  reduce: {
+    (callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
+    (callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
+    <U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>;
+  }; // prettier-ignore
+  /**
+   * Wrapper for {@link Array.reduceRight}.
+   *
+   * NOTE: The reduce value can be anything, so result is NOT wrapped in an instance of {@link PortadomArrayPromise}
+   */
+  reduceRight: {
+    reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
+    reduceRight(callbackfn: (previousValue: Portadom<El, BaseEl>, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => Portadom<El, BaseEl>, initialValue: Portadom<El, BaseEl>): Promise<Portadom<El, BaseEl>>;
+    reduceRight<U>(callbackfn: (previousValue: U, currentValue: Portadom<El, BaseEl>, currentIndex: number, array: Portadom<El, BaseEl>[]) => U, initialValue: U): Promise<U>;
+  }; // prettier-ignore
+  /**
+   * Wrapper for {@link Array.reverse} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  reverse: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['reverse']>
+  ) => PortadomArrayPromise<El, BaseEl>;
+  /** Wrapper for {@link Array.shift} that returns the resulting item as {@link PortadomPromise}. */
+  shift: (...args: Parameters<Portadom<El, BaseEl>[]['shift']>) => PortadomPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.slice} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  slice: (...args: Parameters<Portadom<El, BaseEl>[]['slice']>) => PortadomArrayPromise<El, BaseEl>;
+  /** Wrapper for {@link Array.some}. */
+  some: (...args: Parameters<Portadom<El, BaseEl>[]['some']>) => Promise<boolean>;
+  /**
+   * Wrapper for {@link Array.sort} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  sort: (...args: Parameters<Portadom<El, BaseEl>[]['sort']>) => PortadomArrayPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.splice} that returns the resulting array wrapped in {@link PortadomArrayPromise}.
+   */
+  splice: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['splice']>
+  ) => PortadomArrayPromise<El, BaseEl>;
+  /**
+   * Wrapper for {@link Array.unshift}.
+   *
+   * NOTE: The added values are expected to be {@link Portadom} instances.
+   */
+  unshift: (...args: Parameters<Portadom<El, BaseEl>[]['unshift']>) => Promise<number>;
+  /** NOTE: Does NOT return an instance of PortadomArrayPromise */
+  values: (
+    ...args: Parameters<Portadom<El, BaseEl>[]['values']>
+  ) => Promise<IterableIterator<Portadom<El, BaseEl>>>;
+}
 
 /**
  * Wrapper for a {@link Promise} that resolves to a n Array of {@link Portadom} instances. This allows us to chain
@@ -404,7 +568,7 @@ export type PortadomArrayPromise<El extends BaseEl, BaseEl> = ReturnType<
  */
 export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
   promiseDom: MaybePromise<Portadom<El, BaseEl>[]>
-) => {
+): PortadomArrayPromise<El, BaseEl> => {
   type T = Portadom<El, BaseEl>;
 
   const promise = Promise.resolve(promiseDom);
@@ -424,9 +588,7 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
     entries: (...args: Parameters<T[]['entries']>) => promise.then((d) => d.entries(...args)),
     every: (...args: Parameters<T[]['every']>) => promise.then((d) => d.every(...args)),
     /** NOTE: The fill value is expected to be a Portadom instance */
-    fill: (...args: Parameters<T[]['fill']>) => createPortadomArrayPromise(
-      promise.then((d) => d.fill(...args))
-    ),
+    fill: <U>(...args: [value: U]) => promise.then((d) => d.fill(...(args as [any])) as U[]),
     filter: (...args: Parameters<T[]['filter']>) => createPortadomArrayPromise(
       promise.then((d) => d.filter(...args))
     ),
@@ -438,12 +600,10 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
       promise.then((d) => d.flat(...args))
     ),
     /** NOTE: Items are expected to be mapped to Portadom instances */
-    flatMap: <U extends T, This>(...args: [
+    flatMap: <U, This>(...args: [
       callback: (this: This, value: T, index: number, array: T[]) => U | readonly U[],
       thisArg?: This | undefined
-    ]) => createPortadomArrayPromise(
-      promise.then((d) => d.flatMap<U, This>(...args))
-    ),
+    ]) => promise.then<U[]>((d) => d.flatMap<U, This>(...args)),
     forEach: (...args: Parameters<T[]['forEach']>) => promise.then((d) => d.forEach(...args)),
     includes: (...args: Parameters<T[]['includes']>) => promise.then((d) => d.includes(...args)),
     indexOf: (...args: Parameters<T[]['indexOf']>) => promise.then((d) => d.indexOf(...args)),
@@ -457,15 +617,17 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
     map: <U>(...args: [
       callbackfn: (value: Portadom<El, BaseEl>, index: number, array: Portadom<El, BaseEl>[]) => U,
       thisArg?: any
-    ]) => promise.then((d) => d.map(...args)),
+    ]) => promise.then<U[]>((d) => d.map(...args)),
     pop: (...args: Parameters<T[]['pop']>) => createPortadomPromise(
       promise.then((d) => d.pop(...args) ?? null)
     ),
     push: (...args: Parameters<T[]['push']>) => promise.then((d) => d.push(...args)),
     /** NOTE: Does NOT return an instance of PortadomArrayPromise */
-    reduce: (...args: Parameters<T[]['reduce']>) => promise.then((d) => d.reduce(...args)),
+    // NOTE: reduce has a complex type, so let the type definition handle that
+    reduce: (...args: any[]) => promise.then((d) => d.reduce(...args as [any])),
     /** NOTE: Does NOT return an instance of PortadomArrayPromise */
-    reduceRight: (...args: Parameters<T[]['reduceRight']>) => promise.then((d) => d.reduceRight(...args)),
+    // NOTE: reduceRight has a complex type, so let the type definition handle that
+    reduceRight: ((...args: any[]) => promise.then<any>((d) => d.reduceRight(...args as [any]))) as any as PortadomArrayPromise<El, BaseEl>['reduceRight'],
     reverse: (...args: Parameters<T[]['reverse']>) => createPortadomArrayPromise(
       promise.then((d) => d.reverse(...args))
     ),
@@ -485,5 +647,5 @@ export const createPortadomArrayPromise = <El extends BaseEl, BaseEl>(
     unshift: (...args: Parameters<T[]['unshift']>) => promise.then((d) => d.unshift(...args)),
     /** NOTE: Does NOT return an instance of PortadomArrayPromise */
     values: (...args: Parameters<T[]['values']>) => promise.then((d) => d.values(...args)),
-  }; // prettier-ignore
+  } satisfies PortadomArrayPromise<El, BaseEl>; // prettier-ignore
 };

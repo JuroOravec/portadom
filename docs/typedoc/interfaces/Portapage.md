@@ -50,7 +50,7 @@ Load entries via infinite scroll and process them as you go.
 
 #### Defined in
 
-[src/page/types.ts:28](https://github.com/JuroOravec/portadom/blob/7392e03/src/page/types.ts#L28)
+[src/page/types.ts:28](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L28)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/page/types.ts:25](https://github.com/JuroOravec/portadom/blob/7392e03/src/page/types.ts#L25)
+[src/page/types.ts:25](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/types.ts#L25)

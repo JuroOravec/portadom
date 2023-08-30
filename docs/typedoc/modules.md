@@ -8,6 +8,7 @@
 
 - [InfiniteScrollLoaderOptions](interfaces/InfiniteScrollLoaderOptions.md)
 - [Portadom](interfaces/Portadom.md)
+- [PortadomArrayPromise](interfaces/PortadomArrayPromise.md)
 - [PortadomPromise](interfaces/PortadomPromise.md)
 - [Portapage](interfaces/Portapage.md)
 
@@ -20,7 +21,6 @@
 - [PlaywrightHandlePortadom](modules.md#playwrighthandleportadom)
 - [PlaywrightLocatorPortadom](modules.md#playwrightlocatorportadom)
 - [PlaywrightPortapage](modules.md#playwrightportapage)
-- [PortadomArrayPromise](modules.md#portadomarraypromise)
 
 ### Functions
 
@@ -53,7 +53,7 @@ Any instance that is a Playwright Handle.
 
 #### Defined in
 
-[src/dom/domUtils.ts:39](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L39)
+[src/dom/domUtils.ts:39](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L39)
 
 ___
 
@@ -71,7 +71,7 @@ Implementation of Portadom in browser (using Browser API)
 
 #### Defined in
 
-[src/dom/dom.ts:13](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L13)
+[src/dom/dom.ts:13](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L13)
 
 ___
 
@@ -89,7 +89,7 @@ Implementation of Portadom in Cheerio
 
 #### Defined in
 
-[src/dom/dom.ts:235](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L235)
+[src/dom/dom.ts:235](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L235)
 
 ___
 
@@ -107,7 +107,7 @@ Any instance that is a Playwright Handle, or can be converted to one.
 
 #### Defined in
 
-[src/dom/domUtils.ts:41](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L41)
+[src/dom/domUtils.ts:41](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L41)
 
 ___
 
@@ -125,7 +125,7 @@ Implementation of Portadom in Playwright using Handles
 
 #### Defined in
 
-[src/dom/dom.ts:459](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L459)
+[src/dom/dom.ts:459](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L459)
 
 ___
 
@@ -143,7 +143,7 @@ Implementation of Portadom in Playwright using Locators
 
 #### Defined in
 
-[src/dom/dom.ts:800](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L800)
+[src/dom/dom.ts:800](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L800)
 
 ___
 
@@ -161,24 +161,7 @@ Implementation of Portapage in Playwright
 
 #### Defined in
 
-[src/page/page.ts:23](https://github.com/JuroOravec/portadom/blob/7392e03/src/page/page.ts#L23)
-
-___
-
-### PortadomArrayPromise
-
-Ƭ **PortadomArrayPromise**<`El`, `BaseEl`\>: `ReturnType`<typeof [`createPortadomArrayPromise`](modules.md#createportadomarraypromise)\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `El` | extends `BaseEl` |
-| `BaseEl` | `BaseEl` |
-
-#### Defined in
-
-[src/dom/types.ts:377](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L377)
+[src/page/page.ts:23](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/page.ts#L23)
 
 ## Functions
 
@@ -206,7 +189,7 @@ Implementation of Portadom in browser (using Browser API)
 
 #### Defined in
 
-[src/dom/dom.ts:16](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L16)
+[src/dom/dom.ts:16](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L16)
 
 ___
 
@@ -235,7 +218,7 @@ Implementation of Portadom in Cheerio
 
 #### Defined in
 
-[src/dom/dom.ts:241](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L241)
+[src/dom/dom.ts:241](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L241)
 
 ___
 
@@ -270,13 +253,13 @@ cache the IDs outside of Playwright in Sets or Maps.
 
 #### Defined in
 
-[src/page/pageUtils.ts:20](https://github.com/JuroOravec/portadom/blob/7392e03/src/page/pageUtils.ts#L20)
+[src/page/pageUtils.ts:20](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/pageUtils.ts#L20)
 
 ___
 
 ### createPortadomArrayPromise
 
-▸ **createPortadomArrayPromise**<`El`, `BaseEl`\>(`promiseDom`): `Object`
+▸ **createPortadomArrayPromise**<`El`, `BaseEl`\>(`promiseDom`): [`PortadomArrayPromise`](interfaces/PortadomArrayPromise.md)<`El`, `BaseEl`\>
 
 Wrapper for a Promise that resolves to a n Array of [Portadom](interfaces/Portadom.md) instances. This allows us to chain
 Portadom methods before the Promise is resolved.
@@ -315,46 +298,11 @@ const resB = await domP.text();
 
 #### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `at` | (...`args`: [index: number]) => [`PortadomPromise`](interfaces/PortadomPromise.md)<`El`, `BaseEl`\> |
-| `concat` | (...`args`: (`T` \| `ConcatArray`<`T`\>)[]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `copyWithin` | (...`args`: [target: number, start: number, end?: number]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `entries` | (...`args`: []) => `Promise`<`IterableIterator`<[`number`, [`Portadom`](interfaces/Portadom.md)<`El`, `BaseEl`\>]\>\> |
-| `every` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `fill` | (...`args`: [value: T, start?: number, end?: number]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `filter` | (...`args`: [predicate: Function, thisArg?: any]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `find` | (...`args`: [predicate: Function, thisArg?: any]) => [`PortadomPromise`](interfaces/PortadomPromise.md)<`El`, `BaseEl`\> |
-| `findIndex` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`number`\> |
-| `flat` | (...`args`: [depth?: number]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `flatMap` | <U, This\>(...`args`: [callback: Function, thisArg?: This]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `forEach` | (...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`void`\> |
-| `includes` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`boolean`\> |
-| `indexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `join` | (...`args`: [separator?: string]) => `Promise`<`string`\> |
-| `keys` | (...`args`: []) => `Promise`<`IterableIterator`<`number`\>\> |
-| `lastIndexOf` | (...`args`: [searchElement: T, fromIndex?: number]) => `Promise`<`number`\> |
-| `map` | <U\>(...`args`: [callbackfn: Function, thisArg?: any]) => `Promise`<`U`[]\> |
-| `pop` | (...`args`: []) => [`PortadomPromise`](interfaces/PortadomPromise.md)<`El`, `BaseEl`\> |
-| `promise` | `Promise`<[`Portadom`](interfaces/Portadom.md)<`El`, `BaseEl`\>[]\> |
-| `push` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `reduce` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reduceRight` | (...`args`: [callbackfn: Function, initialValue: unknown]) => `Promise`<`unknown`\> |
-| `reverse` | (...`args`: []) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `shift` | (...`args`: []) => [`PortadomPromise`](interfaces/PortadomPromise.md)<`El`, `BaseEl`\> |
-| `slice` | (...`args`: [start?: number, end?: number]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `some` | (...`args`: [predicate: Function, thisArg?: any]) => `Promise`<`boolean`\> |
-| `sort` | (...`args`: [compareFn?: Function]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `splice` | (...`args`: [start: number, deleteCount: number, ...items: T[]]) => { promise: Promise<Portadom<El, BaseEl\>[]\>; at: (index: number) =\> PortadomPromise<El, BaseEl\>; concat: (...args: (T \| ConcatArray<...\>)[]) =\> ...; ... 28 more ...; values: () =\> Promise<...\>; } |
-| `unshift` | (...`args`: `T`[]) => `Promise`<`number`\> |
-| `values` | (...`args`: []) => `Promise`<`IterableIterator`<[`Portadom`](interfaces/Portadom.md)<`El`, `BaseEl`\>\>\> |
-| `get length()` | `Promise`<`number`\> |
+[`PortadomArrayPromise`](interfaces/PortadomArrayPromise.md)<`El`, `BaseEl`\>
 
 #### Defined in
 
-[src/dom/types.ts:404](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L404)
+[src/dom/types.ts:569](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L569)
 
 ___
 
@@ -403,7 +351,7 @@ const resB = await domP.text();
 
 #### Defined in
 
-[src/dom/types.ts:243](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/types.ts#L243)
+[src/dom/types.ts:242](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/types.ts#L242)
 
 ___
 
@@ -429,7 +377,7 @@ h is Locator
 
 #### Defined in
 
-[src/dom/domUtils.ts:43](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L43)
+[src/dom/domUtils.ts:43](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L43)
 
 ___
 
@@ -463,7 +411,7 @@ To override how Locators are resolved, supply own `locatorResolver` function.
 
 #### Defined in
 
-[src/dom/domUtils.ts:54](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L54)
+[src/dom/domUtils.ts:54](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L54)
 
 ___
 
@@ -492,7 +440,7 @@ Implementation of Portadom in Playwright using Handles
 
 #### Defined in
 
-[src/dom/dom.ts:470](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L470)
+[src/dom/dom.ts:470](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L470)
 
 ___
 
@@ -521,7 +469,7 @@ Implementation of Portadom in Playwright using Locators
 
 #### Defined in
 
-[src/dom/dom.ts:803](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/dom.ts#L803)
+[src/dom/dom.ts:803](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/dom.ts#L803)
 
 ___
 
@@ -549,7 +497,7 @@ Implementation of Portapage in Playwright
 
 #### Defined in
 
-[src/page/page.ts:30](https://github.com/JuroOravec/portadom/blob/7392e03/src/page/page.ts#L30)
+[src/page/page.ts:30](https://github.com/JuroOravec/portadom/blob/4a85752/src/page/page.ts#L30)
 
 ___
 
@@ -576,7 +524,7 @@ To `[Cheerio[el], Cheerio[el], Cheerio[el], Cheerio[el]]`
 
 #### Defined in
 
-[src/dom/domUtils.ts:16](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L16)
+[src/dom/domUtils.ts:16](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L16)
 
 ___
 
@@ -609,4 +557,4 @@ To `ElHandle(el), ElHandle(el), ElHandle(el)`
 
 #### Defined in
 
-[src/dom/domUtils.ts:31](https://github.com/JuroOravec/portadom/blob/7392e03/src/dom/domUtils.ts#L31)
+[src/dom/domUtils.ts:31](https://github.com/JuroOravec/portadom/blob/4a85752/src/dom/domUtils.ts#L31)
