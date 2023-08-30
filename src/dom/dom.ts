@@ -1006,5 +1006,3 @@ const _createCommonAncestorFromSelectorFn = <El>(input: {
 
   return getCommonAncestorFromSelector;
 };
-
-browserPortadom(document.body);
