@@ -1,3 +1,5 @@
+// NOTE: no-check might be required to silence errors from typedoc
+// // @ts-nocheck
 import type { StrAsNumOptions } from '../utils/format';
 import type { FormatUrlOptions } from '../utils/url';
 import type { MaybeArray, MaybePromise } from '../utils/types';
