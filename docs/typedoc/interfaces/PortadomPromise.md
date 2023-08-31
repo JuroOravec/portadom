@@ -84,7 +84,7 @@ Get element's attribute
 
 #### Defined in
 
-[src/dom/types.ts:150](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L150)
+[src/dom/types.ts:150](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L150)
 
 ___
 
@@ -116,7 +116,7 @@ Get element's attributes
 
 #### Defined in
 
-[src/dom/types.ts:154](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L154)
+[src/dom/types.ts:154](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L154)
 
 ___
 
@@ -148,7 +148,7 @@ Get element's children
 
 #### Defined in
 
-[src/dom/types.ts:201](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L201)
+[src/dom/types.ts:201](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L201)
 
 ___
 
@@ -180,7 +180,7 @@ Get a single ancestor (or itself) matching the selector
 
 #### Defined in
 
-[src/dom/types.ts:193](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L193)
+[src/dom/types.ts:193](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L193)
 
 ___
 
@@ -212,7 +212,7 @@ Get all descendants matching the selector
 
 #### Defined in
 
-[src/dom/types.ts:189](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L189)
+[src/dom/types.ts:189](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L189)
 
 ___
 
@@ -244,7 +244,7 @@ Get a single descendant matching the selector
 
 #### Defined in
 
-[src/dom/types.ts:185](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L185)
+[src/dom/types.ts:185](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L185)
 
 ___
 
@@ -277,7 +277,7 @@ or `null` if none such found.
 
 #### Defined in
 
-[src/dom/types.ts:215](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L215)
+[src/dom/types.ts:215](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L215)
 
 ___
 
@@ -311,7 +311,7 @@ or `null` if none such found.
 
 #### Defined in
 
-[src/dom/types.ts:223](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L223)
+[src/dom/types.ts:223](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L223)
 
 ___
 
@@ -337,7 +337,7 @@ Get element's href
 
 #### Defined in
 
-[src/dom/types.ts:162](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L162)
+[src/dom/types.ts:162](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L162)
 
 ___
 
@@ -369,7 +369,7 @@ Freely modify the underlying DOM node
 
 #### Defined in
 
-[src/dom/types.ts:178](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L178)
+[src/dom/types.ts:178](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L178)
 
 ___
 
@@ -379,7 +379,7 @@ ___
 
 #### Defined in
 
-[src/dom/types.ts:127](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L127)
+[src/dom/types.ts:127](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L127)
 
 ___
 
@@ -405,7 +405,7 @@ Get element's nodeName
 
 #### Defined in
 
-[src/dom/types.ts:170](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L170)
+[src/dom/types.ts:170](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L170)
 
 ___
 
@@ -437,7 +437,7 @@ Get element's parent
 
 #### Defined in
 
-[src/dom/types.ts:197](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L197)
+[src/dom/types.ts:197](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L197)
 
 ___
 
@@ -447,7 +447,7 @@ ___
 
 #### Defined in
 
-[src/dom/types.ts:126](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L126)
+[src/dom/types.ts:126](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L126)
 
 ___
 
@@ -479,7 +479,7 @@ Get element's property
 
 #### Defined in
 
-[src/dom/types.ts:158](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L158)
+[src/dom/types.ts:158](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L158)
 
 ___
 
@@ -511,7 +511,7 @@ Get element's properties
 
 #### Defined in
 
-[src/dom/types.ts:160](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L160)
+[src/dom/types.ts:160](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L160)
 
 ___
 
@@ -537,7 +537,7 @@ Remove the element
 
 #### Defined in
 
-[src/dom/types.ts:205](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L205)
+[src/dom/types.ts:205](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L205)
 
 ___
 
@@ -569,7 +569,7 @@ Get root element
 
 #### Defined in
 
-[src/dom/types.ts:207](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L207)
+[src/dom/types.ts:207](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L207)
 
 ___
 
@@ -595,7 +595,7 @@ Get element's src
 
 #### Defined in
 
-[src/dom/types.ts:166](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L166)
+[src/dom/types.ts:166](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L166)
 
 ___
 
@@ -621,7 +621,7 @@ Get element's text (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:134](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L134)
+[src/dom/types.ts:134](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L134)
 
 ___
 
@@ -647,7 +647,7 @@ Get element's text as lowercase (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:142](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L142)
+[src/dom/types.ts:142](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L142)
 
 ___
 
@@ -673,7 +673,7 @@ Get element's text and convert it to number
 
 #### Defined in
 
-[src/dom/types.ts:146](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L146)
+[src/dom/types.ts:146](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L146)
 
 ___
 
@@ -699,7 +699,7 @@ Get element's text as uppercase (trimmed)
 
 #### Defined in
 
-[src/dom/types.ts:138](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L138)
+[src/dom/types.ts:138](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L138)
 
 ___
 
@@ -725,4 +725,4 @@ Get URL of website associated with the DOM
 
 #### Defined in
 
-[src/dom/types.ts:174](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L174)
+[src/dom/types.ts:174](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L174)

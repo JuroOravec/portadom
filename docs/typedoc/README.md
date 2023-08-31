@@ -60,7 +60,9 @@ const btnText = await btn.text();
 npm install portadom
 ```
 
-## Basic usage
+## How to use
+
+### Minimal example
 
 ```js
 const html = `<div>
@@ -75,6 +77,59 @@ const btnText = await btn.text();
 
 const btnProp = await btn.href();
 // btnProp == "https://example.com#"
+```
+
+### Full example
+
+```js
+const $ = loadCheerio(html);
+const dom = cheerioPortadom($.root(), url);
+// ...
+const rootEl = dom.root();
+const url = await dom.url();
+
+// Find and extract data
+const entries = await rootEl.findMany('.list-row:not(.native-agent):not(.reach-list)')
+  .mapAsyncSerial(async (el) => {
+  const employerName = await el.findOne('.employer').text();
+  const employerUrl = await el.findOne('.offer-company-logo-link').href();
+  const employerLogoUrl = await el.findOne('.offer-company-logo-link img').src();
+
+  const offerUrlEl = el.findOne('h2 a');
+  const offerUrl = await offerUrlEl.href();
+  const offerName = await offerUrlEl.text();
+  const offerId = offerUrl?.match(/O\d{2,}/)?.[0] ?? null;
+
+  const location = await el.findOne('.job-location').text();
+
+  const salaryText = await el.findOne('.label-group > a[data-dimension7="Salary label"]').text();
+
+  const labels = await el.findMany('.label-group > a:not([data-dimension7="Salary label"])')
+    .mapAsyncSerial((el) => el.text())
+    .then((arr) => arr.filter(Boolean) as string[]);
+
+  const footerInfoEl = el.findOne('.list-footer .info');
+  const lastChangeRelativeTimeEl = footerInfoEl.findOne('strong');
+  const lastChangeRelativeTime = await lastChangeRelativeTimeEl.text();
+  // Remove the element so it's easier to get the text content
+  await lastChangeRelativeTimeEl.remove();
+  const lastChangeTypeText = await footerInfoEl.textAsLower();
+  const lastChangeType = lastChangeTypeText === 'pridané' ? 'added' : 'modified';
+
+  return {
+    listingUrl: url,
+    employerName,
+    employerUrl,
+    employerLogoUrl,
+    offerName,
+    offerUrl,
+    offerId,
+    location,
+    labels,
+    lastChangeRelativeTime,
+    lastChangeType,
+  };
+});
 ```
 
 ### Loading
@@ -202,3 +257,10 @@ const attrs = await Promise.all(mapPromises);
 See the [full documentation here](./docs/typedoc/modules.md).
 - [Portadom](./docs/typedoc/interfaces/Portadom.md)
 - [Portapage](./docs/typedoc/interfaces/Portapage.md)
+
+## Real life exampes
+
+- [Profesia.sk Scraper](https://github.com/JuroOravec/apify-actor-profesia-sk)
+  - [Example 1](https://github.com/JuroOravec/apify-actor-profesia-sk/blob/3793915632bd81dc257d36699808635c8bc3f87e/src/pageActions/jobListing.ts#L128)
+  - [Example 2](https://github.com/JuroOravec/apify-actor-profesia-sk/blob/3793915632bd81dc257d36699808635c8bc3f87e/src/pageActions/jobDetail.ts#L75)
+- [SKCRIS Scraper](https://github.com/JuroOravec/apify-actor-skcris/blob/9ce92f9bd55ffcde91f22744e49ba97b6b4f0e44/src/pageActions/detail.ts#L510)

@@ -102,7 +102,7 @@ Wrapper for Array.at that returns the resulting item as [PortadomPromise](Portad
 
 #### Defined in
 
-[src/dom/types.ts:417](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L417)
+[src/dom/types.ts:417](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L417)
 
 ___
 
@@ -130,7 +130,7 @@ NOTE: The concat values are expected to be [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:423](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L423)
+[src/dom/types.ts:423](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L423)
 
 ___
 
@@ -158,7 +158,7 @@ NOTE: The concat values are expected to be [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:431](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L431)
+[src/dom/types.ts:431](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L431)
 
 ___
 
@@ -186,7 +186,7 @@ NOTE: Does NOT return an instance of [PortadomArrayPromise](PortadomArrayPromise
 
 #### Defined in
 
-[src/dom/types.ts:439](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L439)
+[src/dom/types.ts:439](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L439)
 
 ___
 
@@ -212,7 +212,7 @@ Wrapper for Array.every.
 
 #### Defined in
 
-[src/dom/types.ts:443](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L443)
+[src/dom/types.ts:443](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L443)
 
 ___
 
@@ -248,7 +248,7 @@ NOTE2: Unlike Array.fill, this option doesn't allow to specify `start` and `end`
 
 #### Defined in
 
-[src/dom/types.ts:451](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L451)
+[src/dom/types.ts:451](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L451)
 
 ___
 
@@ -274,7 +274,7 @@ Wrapper for Array.filter that returns the resulting array wrapped in [PortadomAr
 
 #### Defined in
 
-[src/dom/types.ts:455](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L455)
+[src/dom/types.ts:455](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L455)
 
 ___
 
@@ -302,7 +302,7 @@ Returns the resulting array wrapped in [PortadomArrayPromise](PortadomArrayPromi
 
 #### Defined in
 
-[src/dom/types.ts:605](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L605)
+[src/dom/types.ts:605](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L605)
 
 ___
 
@@ -330,7 +330,7 @@ Returns the resulting array wrapped in [PortadomArrayPromise](PortadomArrayPromi
 
 #### Defined in
 
-[src/dom/types.ts:596](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L596)
+[src/dom/types.ts:596](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L596)
 
 ___
 
@@ -356,7 +356,7 @@ Wrapper for Array.find that returns the resulting item as [PortadomPromise](Port
 
 #### Defined in
 
-[src/dom/types.ts:459](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L459)
+[src/dom/types.ts:459](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L459)
 
 ___
 
@@ -384,7 +384,7 @@ Returns the resulting item as [PortadomPromise](PortadomPromise.md).
 
 #### Defined in
 
-[src/dom/types.ts:614](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L614)
+[src/dom/types.ts:614](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L614)
 
 ___
 
@@ -410,7 +410,7 @@ Wrapper for Array.findIndex.
 
 #### Defined in
 
-[src/dom/types.ts:461](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L461)
+[src/dom/types.ts:461](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L461)
 
 ___
 
@@ -436,7 +436,7 @@ Wrapper for Array.flat that returns the resulting array wrapped in [PortadomArra
 
 #### Defined in
 
-[src/dom/types.ts:463](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L463)
+[src/dom/types.ts:463](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L463)
 
 ___
 
@@ -471,7 +471,7 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:469](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L469)
+[src/dom/types.ts:469](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L469)
 
 ___
 
@@ -497,7 +497,7 @@ Wrapper for Array.forEach.
 
 #### Defined in
 
-[src/dom/types.ts:474](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L474)
+[src/dom/types.ts:474](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L474)
 
 ___
 
@@ -523,7 +523,7 @@ Similar to Array.forEach, but awaits for Promises. Items are handled all in para
 
 #### Defined in
 
-[src/dom/types.ts:569](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L569)
+[src/dom/types.ts:569](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L569)
 
 ___
 
@@ -549,7 +549,7 @@ Similar to Array.forEach, but awaits for Promises. Items are handled one-by-one.
 
 #### Defined in
 
-[src/dom/types.ts:562](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L562)
+[src/dom/types.ts:562](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L562)
 
 ___
 
@@ -575,7 +575,7 @@ Wrapper for Array.includes.
 
 #### Defined in
 
-[src/dom/types.ts:476](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L476)
+[src/dom/types.ts:476](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L476)
 
 ___
 
@@ -601,7 +601,7 @@ Wrapper for Array.indexOf.
 
 #### Defined in
 
-[src/dom/types.ts:478](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L478)
+[src/dom/types.ts:478](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L478)
 
 ___
 
@@ -627,7 +627,7 @@ Wrapper for Array.join.
 
 #### Defined in
 
-[src/dom/types.ts:480](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L480)
+[src/dom/types.ts:480](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L480)
 
 ___
 
@@ -653,7 +653,7 @@ Wrapper for Array.keys.
 
 #### Defined in
 
-[src/dom/types.ts:482](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L482)
+[src/dom/types.ts:482](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L482)
 
 ___
 
@@ -679,7 +679,7 @@ Wrapper for Array.lastIndexOf.
 
 #### Defined in
 
-[src/dom/types.ts:484](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L484)
+[src/dom/types.ts:484](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L484)
 
 ___
 
@@ -691,7 +691,7 @@ Wrapper for Array.length.
 
 #### Defined in
 
-[src/dom/types.ts:486](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L486)
+[src/dom/types.ts:486](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L486)
 
 ___
 
@@ -725,7 +725,7 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:492](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L492)
+[src/dom/types.ts:492](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L492)
 
 ___
 
@@ -759,7 +759,7 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:587](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L587)
+[src/dom/types.ts:587](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L587)
 
 ___
 
@@ -793,7 +793,7 @@ NOTE: Mapped values can be anything, so result is NOT wrapped in an instance of 
 
 #### Defined in
 
-[src/dom/types.ts:578](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L578)
+[src/dom/types.ts:578](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L578)
 
 ___
 
@@ -819,7 +819,7 @@ Wrapper for Array.pop that returns the resulting item as [PortadomPromise](Porta
 
 #### Defined in
 
-[src/dom/types.ts:497](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L497)
+[src/dom/types.ts:497](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L497)
 
 ___
 
@@ -831,7 +831,7 @@ Wrapped Promise of an array of [Portadom](Portadom.md) instances
 
 #### Defined in
 
-[src/dom/types.ts:410](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L410)
+[src/dom/types.ts:410](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L410)
 
 ___
 
@@ -859,7 +859,7 @@ NOTE: The pushed values are expected to be [Portadom](Portadom.md) instances.
 
 #### Defined in
 
-[src/dom/types.ts:503](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L503)
+[src/dom/types.ts:503](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L503)
 
 ___
 
@@ -885,7 +885,7 @@ Wrapper for Array.reverse that returns the resulting array wrapped in [PortadomA
 
 #### Defined in
 
-[src/dom/types.ts:523](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L523)
+[src/dom/types.ts:523](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L523)
 
 ___
 
@@ -911,7 +911,7 @@ Wrapper for Array.shift that returns the resulting item as [PortadomPromise](Por
 
 #### Defined in
 
-[src/dom/types.ts:527](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L527)
+[src/dom/types.ts:527](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L527)
 
 ___
 
@@ -937,7 +937,7 @@ Wrapper for Array.slice that returns the resulting array wrapped in [PortadomArr
 
 #### Defined in
 
-[src/dom/types.ts:531](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L531)
+[src/dom/types.ts:531](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L531)
 
 ___
 
@@ -963,7 +963,7 @@ Wrapper for Array.some.
 
 #### Defined in
 
-[src/dom/types.ts:533](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L533)
+[src/dom/types.ts:533](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L533)
 
 ___
 
@@ -989,7 +989,7 @@ Wrapper for Array.sort that returns the resulting array wrapped in [PortadomArra
 
 #### Defined in
 
-[src/dom/types.ts:537](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L537)
+[src/dom/types.ts:537](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L537)
 
 ___
 
@@ -1015,7 +1015,7 @@ Wrapper for Array.splice that returns the resulting array wrapped in [PortadomAr
 
 #### Defined in
 
-[src/dom/types.ts:541](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L541)
+[src/dom/types.ts:541](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L541)
 
 ___
 
@@ -1043,7 +1043,7 @@ NOTE: The added values are expected to be [Portadom](Portadom.md) instances.
 
 #### Defined in
 
-[src/dom/types.ts:549](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L549)
+[src/dom/types.ts:549](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L549)
 
 ___
 
@@ -1069,7 +1069,7 @@ NOTE: Does NOT return an instance of PortadomArrayPromise
 
 #### Defined in
 
-[src/dom/types.ts:551](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L551)
+[src/dom/types.ts:551](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L551)
 
 ## Methods
 
@@ -1093,7 +1093,7 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:509](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L509)
+[src/dom/types.ts:509](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L509)
 
 ▸ **reduce**(`callbackfn`, `initialValue`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
 
@@ -1110,7 +1110,7 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:510](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L510)
+[src/dom/types.ts:510](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L510)
 
 ▸ **reduce**<`U`\>(`callbackfn`, `initialValue`): `Promise`<`U`\>
 
@@ -1133,7 +1133,7 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:511](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L511)
+[src/dom/types.ts:511](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L511)
 
 ___
 
@@ -1157,7 +1157,7 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:517](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L517)
+[src/dom/types.ts:517](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L517)
 
 ▸ **reduceRight**(`callbackfn`, `initialValue`): `Promise`<[`Portadom`](Portadom.md)<`El`, `BaseEl`\>\>
 
@@ -1174,7 +1174,7 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:518](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L518)
+[src/dom/types.ts:518](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L518)
 
 ▸ **reduceRight**<`U`\>(`callbackfn`, `initialValue`): `Promise`<`U`\>
 
@@ -1197,4 +1197,4 @@ NOTE: The reduce value can be anything, so result is NOT wrapped in an instance 
 
 #### Defined in
 
-[src/dom/types.ts:519](https://github.com/JuroOravec/portadom/blob/5acdd8c/src/dom/types.ts#L519)
+[src/dom/types.ts:519](https://github.com/JuroOravec/portadom/blob/b47a342/src/dom/types.ts#L519)
