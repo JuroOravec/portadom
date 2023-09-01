@@ -48,7 +48,6 @@
     "gen:docs": "typedoc src/index.ts --plugin typedoc-plugin-markdown --tsconfig tsconfig.base.json --out ./docs/typedoc"
   },
   "devDependencies": {
-    "@types/lodash": "^4.14.194",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "cheerio": "^1.0.0-rc.12",
@@ -61,8 +60,5 @@
     "typedoc": "^0.25.0",
     "typedoc-plugin-markdown": "^3.16.0",
     "typescript": "^5.0.4"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21"
   }
 }

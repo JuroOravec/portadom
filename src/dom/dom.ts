@@ -1,6 +1,5 @@
 import type { AnyNode, Cheerio } from 'cheerio';
 import type { ElementHandle, JSHandle, Locator, Page } from 'playwright';
-import get from 'lodash/get';
 
 import { strAsNumber, strOrNull } from '../utils/format';
 import { formatUrl } from '../utils/url';
@@ -8,6 +7,9 @@ import type { MaybeArray, MaybePromise } from '../utils/types';
 import { logAndRethrow } from '../utils/error';
 import { mergeHandles, splitCheerioSelection, splitPlaywrightSelection } from './domUtils';
 import { createPortadomArrayPromise, createPortadomPromise, type Portadom } from './types';
+
+const get = (obj: any, propPath: string[]) =>
+  propPath.reduce((prevRes, propKey) => prevRes?.[propKey] ?? null, obj);
 
 /** Implementation of Portadom in browser (using Browser API) */
 export type BrowserPortadom<T extends Element = Element> = Portadom<T, Element>;
