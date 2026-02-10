@@ -1,3 +1,14 @@
+> [!IMPORTANT]
+> **This repository has been archived.** Development continues at [JuroOravec/crawlee-one](https://github.com/JuroOravec/crawlee-one/tree/main/packages/portadom) (monorepo, `packages/portadom/`).
+>
+> Install the latest version from npm as before:
+>
+> ```sh
+> npm install portadom
+> ```
+>
+> The package name on npm is unchanged -- only the source repository has moved.
+
 # Portadom
 
 *Single DOM manipulation interface across Browser API, JSDOM, Cheerio, Playwright.*
